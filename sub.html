@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+      <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="sub">
+
+ 
+      <header>
+        <h1><a href="index.html"><img src="images/logo_white_ver.jpg" alt=""></a></h1>
+        <nav>
+            <ul class="gnb">
+               <li><a href="#"><span>ABOUT</span></a>
+                <ul class="lnb">
+                    <li><a href="#">회사 소개</a></li>
+                    <li class="click"><a href="sub.html">연혁 및 수상</a></li>
+                    <li><a href="#">철학·비전</a></li>
+                    <li><a href="#">파트너사</a></li>
+                    <li><a href="#">오시는 길</a></li>
+                </ul>
+            </li>
+            <li><a href="#"><span>EXPERTISE</span></a>
+                <ul class="lnb">
+                    <li><a href="#">퍼포먼스 마케팅</a></li>
+                    <li><a href="#">소셜 미디어 운영</a></li>
+                    <li><a href="#">디지털 캠페인</a></li>
+                    <li><a href="#">콘텐츠 기획·제작</a></li>
+                    <li class="click"><a href="sub2.html">브랜딩</a></li>
+                </ul>
+            </li>
+            <li><a href="#"><span>CASE</span></a>
+                <ul class="lnb">
+                    <li><a href="#">전체보기</a></li>
+                    <li><a href="#">브랜드</a></li>
+                    <li><a href="#">퍼포먼스</a></li>
+                    <li><a href="#">SNS</a></li>
+                    <li><a href="#">영상</a></li>
+                </ul>
+            </li>
+            <li><a href="#"><span>NEWS</span></a>
+                <ul class="lnb">
+                    <li><a href="#">에이전시</a></li>
+                    <li><a href="#">인사이트</a></li>
+                    <li><a href="#">리포트</a></li>
+                    <li><a href="#">채용</a></li>
+                </ul>
+            </li>
+                <li><a href="sub2.html">CONTACT</a></li>
+            </ul>
+            <div class="lnb_bg"></div>
+        </nav>
+
+        <div class="hd_btn">
+            <div class="lang">
+                KR
+            </div>
+            <div class="search">
+                <img src="images/Search_black.png" alt="">
+            </div>
+        </div>
+    </header>
+    
+   <section class="timeline-container">
+    <div class="side-nav">
+        <div class="nav-btn active">2021 - 2022</div>
+        <div class="nav-btn">2022 - 2023</div>
+        <div class="nav-btn">2023 - 2024</div>
+        <div class="nav-btn">2024 - 2025</div>
+    </div>
+
+    <div class="main-title">
+        <p class="sub">2021 - 2022</p>
+        <h1>새로운 기준의 시작</h1>
+    </div>
+
+    <div class="card-section">
+        <div class="card-stack">
+        <div class="card card1">
+            <div class="card-content">
+            <h2>2021. 10</h2>
+            <ul>
+                <li>디지털 마케팅 에이전시 ONSIDE 설립</li>
+                <li>퍼포먼스 마케팅 전담 사업부 신설</li>
+                <li>주요 코스메틱 브랜드 연간 대행 수주</li>
+            </ul>
+            </div>
+        </div>
+
+        <div class="card card2">
+            <div class="card-content">
+            <h2>2023. 03</h2>
+            <ul>
+                <li>누적 캠페인 기획 및 운영 300건 돌파</li>
+                <li>글로벌 라이프스타일 브랜드 파트너십 체결</li>
+                <li>자체 마케팅 데이터 트래킹 솔루션 고도화</li>
+            </ul>
+            </div>
+        </div>
+
+        <div class="card card3">
+            <div class="card-content">
+            <h2>2024. 05</h2>
+            <ul>
+                <li>대한민국 디지털 광고 대상 퍼포먼스 부문 수상</li>
+                <li>B2B 통합 마케팅 컨설팅 서비스 론칭</li>
+                <li>사세 확장 및 본사 사옥 이전</li>
+            </ul>
+            </div>
+        </div>
+
+         <div class="card card4">
+            <div class="card-content">
+            <h2>2025. 01</h2>
+            <ul>
+                <li>AI 기반 초개인화 마케팅 솔루션 도입</li>
+                <li>연간 누적 광고 취급고 100억 돌파</li>
+                <li>글로벌 마케팅 전담팀 신설 및 아시아 시장 진출</li>
+            </ul>
+            </div>
+        </div>
+        </div>
+
+    </div>
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+<script>
+  gsap.registerPlugin(ScrollTrigger);
+
+  // 메인 타임라인 설정
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".timeline-container",
+      start: "top top",
+      end: "+=2000", // 스크롤 길이
+      pin: true,     // 화면 고정
+      scrub: 1,      // 스크롤 속도에 맞춤
+    }
+  });
+
+  // 1. 카드2가 위에서 아래로 떨어짐
+  tl.to(".card2", {
+    y: "0%", 
+    opacity: 1,
+    duration: 1,
+    ease: "power2.out"
+  })
+  // 2. 카드2가 내려올 때 중앙 텍스트 변경 (동시 진행: "<")
+  .to(".main-title .sub", { textContent: "2022 - 2023", duration: 0.1 }, "<")
+  .to(".main-title h1", { textContent: "혁신의 등장", duration: 0.1 }, "<")
+  // 3. 카드2가 내려올 때 왼쪽 버튼 활성화 변경
+  .to(".nav-btn:nth-child(1)", { backgroundColor: "#f0f0f0", color: "#999" }, "<")
+  .to(".nav-btn:nth-child(2)", { backgroundColor: "#CE9728", color: "#fff" }, "<");
+
+  /* 카드를 더 추가하고 싶다면 아래 패턴을 반복하세요 */
+  
+  tl.to(".card3", {
+    y: "0%", 
+    opacity: 1,
+    duration: 1,
+    ease: "power2.out"
+  })
+
+  // 2. 카드3이 내려올 때 중앙 텍스트 변경 (동시 진행: "<")
+  .to(".main-title .sub", { textContent: "2023 - 2024", duration: 0.1 }, "<")
+  .to(".main-title h1", { textContent: "압도적인 도약", duration: 0.1 }, "<")
+  // 3. 카드3이 내려올 때 왼쪽 버튼 활성화 변경
+  .to(".nav-btn:nth-child(2)", { backgroundColor: "#f0f0f0", color: "#999" }, "<")
+  .to(".nav-btn:nth-child(3)", { backgroundColor: "#CE9728", color: "#fff" }, "<");
+
+  /* 카드를 더 추가하고 싶다면 아래 패턴을 반복하세요 */
+
+    tl.to(".card4", {
+    y: "0%", 
+    opacity: 1,
+    duration: 1,
+    ease: "power2.out"
+  })
+
+  // 2. 카드4가 내려올 때 중앙 텍스트 변경 (동시 진행: "<")
+  .to(".main-title .sub", { textContent: "2024 - 2025", duration: 0.1 }, "<")
+  .to(".main-title h1", { textContent: "마켓 리더의 증명", duration: 0.1 }, "<")
+  // 3. 카드4가 내려올 때 왼쪽 버튼 활성화 변경
+  .to(".nav-btn:nth-child(3)", { backgroundColor: "#f0f0f0", color: "#999" }, "<")
+  .to(".nav-btn:nth-child(4)", { backgroundColor: "#CE9728", color: "#fff" }, "<");
+
+  /* 카드를 더 추가하고 싶다면 아래 패턴을 반복하세요 */
+  
+
+
+</script>
+</body>
+
+</html>
